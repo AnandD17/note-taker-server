@@ -6,12 +6,13 @@ dotenv.config();
 const port = 4000;
 import routes from './routes';
 import { errorConverter, errorHandler } from './middleware/error.js';
+import cors from 'cors';
 
 (async () => {
   await connectDB();
 
   app.use(express.json());
-
+  app.use(cors());
 
   app.get('/', (req, res) => {
     res.send('Hello World!');

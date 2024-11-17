@@ -18,7 +18,7 @@ const createNote = async (body:TNotes) => {
 
 const getNotes = async (query:any) => {
     const { userId, search } = query;
-    const filter:any = { userId };
+    const filter:any = { userId, isActive: true };
     if (search) {
         filter.title = { $regex: search, $options: 'i' };
     }
