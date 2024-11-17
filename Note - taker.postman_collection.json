@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "10706bea-2a39-4ad8-af56-a913bbc50010",
+		"name": "Note - taker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27640959"
+	},
+	"item": [
+		{
+			"name": "Create Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"this is title\",\n    \"description\":\"desc\",\n    \"color\":\"#000fff\",\n    \"userId\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/api/notes"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Notes",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"this is title 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/api/notes/673a4bdf05378e73b72994d2"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Notes",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/api/notes/673a4bdf05378e73b72994d2"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"this is title 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/notes?userId=123456&search=",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123456"
+						},
+						{
+							"key": "search",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:4000",
+			"type": "string"
+		}
+	]
+}
